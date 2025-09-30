@@ -30,7 +30,7 @@ export function isAuthenticated(req) {
     }
 
     return { success: true, userId: decoded.userId, decoded };
-  } catch (err) {
-    return { success: false, status: 401, message: "Invalid or expired token" };
+  } catch (error) {
+    return { success: false, status: 401, message: error.message };
   }
 }
