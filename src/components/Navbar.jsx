@@ -28,7 +28,9 @@ const Navbar = () => {
 
         <nav className="hidden md:flex space-x-6 items-center">
           <Link href="/">Home</Link>
-          <Link href="/collection">Collections</Link>
+          <Link href={`${user ? "/collection" : "/loginRegister"}`}>
+            Collections
+          </Link>
           <Link
             href="/loginRegister"
             onClick={() => {
@@ -117,7 +119,7 @@ const Navbar = () => {
             ) : (
               <button
                 onClick={() => setShowSearch(true)}
-                className="p-2 hover:bg-amber-800 rounded"
+                className="p-2 hover:bg-amber-800 rounded hover:cursor-pointersss"
               >
                 <FiSearch />
               </button>
